@@ -1,7 +1,8 @@
 name: dotnet package
 
 on:
-  pull_request:
+  push:
+  # pull_request:
     # Sequence of patterns matched against refs/heads
     branches:    
       - master
