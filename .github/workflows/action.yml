@@ -47,23 +47,23 @@ jobs:
       - name: Test
         run: dotnet test --no-restore --verbosity normal
 
-      - name: Zip output
-        run: |
-          pwd
-          ls ./HelloWorldCSharpCI/bin/Release/net6.0
-          zip -r release.zip ./HelloWorldCSharpCI/bin/Release/net6.0/*.*
-          ls ./
+      # - name: Zip output
+      #   run: |
+      #     pwd
+      #     ls ./HelloWorldCSharpCI/bin/Release/net6.0
+      #     zip -r release.zip ./HelloWorldCSharpCI/bin/Release/net6.0
+      #     ls ./
 
 
       - name: publish
         run: dotnet publish -r win-x64
         # [project_file_folder]/bin/[configuration]/[framework]/publish/ に設定されます。
 
-      - name: Zip publised file
+      - name: Zip publish
         run: |
           pwd
           ls ./HelloWorldCSharpCI/bin/Release/net6.0/publish
-          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish/*.*
+          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish
           ls ./
 
       - name: Create Release
@@ -81,16 +81,16 @@ jobs:
           draft: false
           prerelease: false
 
-      - name: Upload Release Asset (Build)
-        id: upload-release-asset-build
-        uses: actions/upload-release-asset@v1.0.1
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./release.zip
-          asset_name: release.zip
-          asset_content_type: application/zip
+      # - name: Upload Release Asset (Build)
+      #   id: upload-release-asset-build
+      #   uses: actions/upload-release-asset@v1.0.1
+      #   env:
+      #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #   with:
+      #     upload_url: ${{ steps.create_release.outputs.upload_url }}
+      #     asset_path: ./release.zip
+      #     asset_name: release.zip
+      #     asset_content_type: application/zip
 
       - name: Upload Release Asset (Publish)
         id: upload-release-asset-publish
