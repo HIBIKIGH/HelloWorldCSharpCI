@@ -1,12 +1,16 @@
 name: dotnet package
 
 on:
-  push:
-  # pull_request:
-    # Sequence of patterns matched against refs/heads
-    branches:    
+  pull_request:
+    types: [closed]
+    branches:
       - master
-      # - 'releases/**'
+  # push:
+  # # pull_request:
+  #   # Sequence of patterns matched against refs/heads
+  #   branches:    
+  #     - master
+  #     # - 'releases/**'
 
 jobs:
   build:
