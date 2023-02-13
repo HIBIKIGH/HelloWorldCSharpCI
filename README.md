@@ -53,3 +53,43 @@
 
 
 [.NETでのビルドとテスト - GitHub Docs](https://docs.github.com/ja/actions/automating-builds-and-tests/building-and-testing-net)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+[ワークフロー状態バッジの追加 - GitHub Docs](https://docs.github.com/ja/actions/monitoring-and-troubleshooting-workflows/adding-a-workflow-status-badge#using-the-event-parameter)
+
+
+
+
+
+
+
+[Github ActionsでResource not accessible by integrationが出た際の対処法](https://zenn.dev/tatsugon/articles/github-actions-permission-error)
+
+
+
+
+
+[GitHub Actions を使ってリリース時のあれこれを自動化する](https://zenn.dev/itizawa/articles/b832c4e2a33661)
+
+
+
+
+
+リリースノートはここまでできるといい
+
+[GitHub Actions で簡単にバージョン番号付きリリースとリリースノートを作成する方法](https://zenn.dev/kounoike/articles/20220211-easy-generate-release-notes)

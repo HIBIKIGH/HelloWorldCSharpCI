@@ -1,12 +1,16 @@
 name: dotnet package
 
 on:
-  push:
-  # pull_request:
-    # Sequence of patterns matched against refs/heads
-    branches:    
+  pull_request:
+    types: [closed]
+    branches:
       - master
-      # - 'releases/**'
+  # push:
+  # # pull_request:
+  #   # Sequence of patterns matched against refs/heads
+  #   branches:    
+  #     - master
+  #     # - 'releases/**'
 
 jobs:
   build:
@@ -18,16 +22,28 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+
       - name: Setup .NET Core SDK ${{ matrix.dotnet-version }}
         uses: actions/setup-dotnet@v3
         # with:
         #   dotnet-version: ${{ matrix.dotnet-version }}
+
       - name: Install dependencies
         run: dotnet restore
+
       - name: Build
         run: dotnet build --configuration Release --no-restore
+
+        # ./bin/<configuration>/<framework>/
+        # ./bin/Release/net6.0
+        # ./bin/Debug/net6.0
+
       - name: Test
         run: dotnet test --no-restore --verbosity normal
+
+      - name: Zip output
+        run: zip -r ./output/release.zip ./bin/Release/net6.0
+              pwd
 
       - name: Create Release
         id: create_release
@@ -43,3 +59,15 @@ jobs:
             - Second Change
           draft: false
           prerelease: false
+
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1.0.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: ./output/release.zip
+          asset_name: release.zip
+          asset_content_type: application/zip
