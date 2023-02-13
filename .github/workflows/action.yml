@@ -50,7 +50,7 @@ jobs:
       - name: Zip output
         run: |
           pwd
-          zip release bin/Release/net6.0
+          zip release bin/Release/net6.0/*.*
 
       - name: Create Release
         id: create_release
