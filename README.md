@@ -2,6 +2,10 @@
 
 .net6のコンソールアプリケーションでのCIを組んでみるリポジトリ
 
+# ステータスバッジ
+
+[![dotnet package](https://github.com/HIBIKIGH/HelloWorldCSharpCI/actions/workflows/action.yml/badge.svg)](https://github.com/HIBIKIGH/HelloWorldCSharpCI/actions/workflows/action.yml)
+
 ## 環境
 
 使うものは以下
