@@ -51,7 +51,7 @@ jobs:
         run: |
           pwd
           ls ./HelloWorldCSharpCI/bin/Release/net6.0
-          zip -r release.zip ./HelloWorldCSharpCI/bin/Release/net6.0/*.*
+          zip -r release.zip ./HelloWorldCSharpCI/bin/Release/net6.0
           ls ./
 
 
@@ -59,11 +59,11 @@ jobs:
         run: dotnet publish -r win-x64
         # [project_file_folder]/bin/[configuration]/[framework]/publish/ に設定されます。
 
-      - name: Zip publised file
+      - name: Zip publish
         run: |
           pwd
           ls ./HelloWorldCSharpCI/bin/Release/net6.0/publish
-          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish/*.*
+          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish
           ls ./
 
       - name: Create Release
