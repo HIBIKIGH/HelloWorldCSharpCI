@@ -50,7 +50,7 @@ jobs:
       # - name: Zip output
       #   run: |
       #     pwd
-      #     ls ./HelloWorldCSharpCI/bin/Release/net6.0
+      #     ls -R ./HelloWorldCSharpCI/bin/Release/net6.0
       #     zip -r release.zip ./HelloWorldCSharpCI/bin/Release/net6.0
       #     ls ./
 
@@ -62,9 +62,8 @@ jobs:
       - name: Zip publish
         run: |
           pwd
-          ls ./HelloWorldCSharpCI/bin/Release/net6.0/publish
+          ls -R ./HelloWorldCSharpCI/bin/Release/net6.0
           zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish
-          ls ./
 
       - name: Create Release
         id: create_release
