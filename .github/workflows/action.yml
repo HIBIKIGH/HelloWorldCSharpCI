@@ -1,6 +1,9 @@
 name: dotnet package
 
 on: [push]
+    branches:
+      - main
+      # - 'releases/**'
 
 jobs:
   build:
