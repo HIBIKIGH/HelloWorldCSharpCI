@@ -38,11 +38,14 @@ jobs:
         # ./bin/Release/net6.0
         # ./bin/Debug/net6.0
 
+      - name: Print workind directory
+        run: pwd
+
       - name: Test
         run: dotnet test --no-restore --verbosity normal
-
+        
       - name: Zip output
-        run: zip -r ./bin/Release/release.zip ./bin/Release/net6.0
+        run: zip -r release.zip ./bin/Release/net6.0/*.*
 
       - name: Create Release
         id: create_release
