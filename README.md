@@ -90,6 +90,14 @@
 
 
 
+
+
+[アプリケーション配置用に単一ファイルを作成する - .NET | Microsoft Learn](https://learn.microsoft.com/ja-jp/dotnet/core/deploying/single-file/overview?tabs=cli)
+
+
+
+
+
 リリースノートはここまでできるといい
 
 [GitHub Actions で簡単にバージョン番号付きリリースとリリースノートを作成する方法](https://zenn.dev/kounoike/articles/20220211-easy-generate-release-notes)
