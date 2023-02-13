@@ -41,14 +41,14 @@ jobs:
       - name: Print working directory
         run: pwd
 
-      - name: man zip
-        run: man zip
+      # - name: man zip
+      #   run: man zip
 
       - name: Test
         run: dotnet test --no-restore --verbosity normal
 
       - name: Zip output
-        run: zip release.zip ./bin/Release/net6.0/*.*
+        run: zip release ./bin/Release/net6.0
 
       - name: Create Release
         id: create_release
