@@ -4,6 +4,8 @@
 
 # ステータスバッジ
 
+※バッジは直接コミットを受けてCIを流したときのステータスしか追えてないのでプルリクでこけたり、こけたままマージしても赤くはならない。
+
 [![dotnet package](https://github.com/HIBIKIGH/HelloWorldCSharpCI/actions/workflows/action.yml/badge.svg)](https://github.com/HIBIKIGH/HelloWorldCSharpCI/actions/workflows/action.yml)
 
 ## 環境
