@@ -56,14 +56,14 @@ jobs:
 
 
       - name: publish
-        run: dotnet publish --runtime win-x64 --self-contained true
+        run: dotnet publish --runtime win-x64 --self-contained true --configuration Release
         # [project_file_folder]/bin/[configuration]/[framework]/publish/ に設定されます。
 
       - name: Zip publish
         run: |
           pwd
           ls -R ./HelloWorldCSharpCI/bin/Release/net6.0
-          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0/publish
+          zip -r publish.zip ./HelloWorldCSharpCI/bin/Release/net6.0
 
       - name: Create Release
         id: create_release
