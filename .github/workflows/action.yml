@@ -82,7 +82,7 @@ jobs:
           prerelease: false
 
       - name: Upload Release Asset (Build)
-        id: upload-release-asset
+        id: upload-release-asset-build
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -93,7 +93,7 @@ jobs:
           asset_content_type: application/zip
 
       - name: Upload Release Asset (Publish)
-        id: upload-release-asset
+        id: upload-release-asset-publish
         uses: actions/upload-release-asset@v1.0.1
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
